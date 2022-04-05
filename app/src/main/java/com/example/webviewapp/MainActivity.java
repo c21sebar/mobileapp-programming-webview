@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private WebView myWebView;
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
-        myWebView.loadUrl("https://www.google.se");
-
+        myWebView.loadUrl("https://www.his.se");
     }
 
     public void showInternalWebPage(){
@@ -32,17 +32,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         myWebView = findViewById(R.id.my_webView);
         myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.setWebViewClient(new WebViewClient());
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         /*
 
-        -- Commit and push to your github fork
-        * Move the code that loads a URL into your WebView into the two methods
-          "showExternalWebPage()" and "showInternalWebPage()".
-        * Call the "showExternalWebPage()" / "showInternalWebPage()" methods
-          when you select menu options "External Web Page" or "Internal Web Page"
-          respectively
         -- Commit and push to your github fork
         * Take two screenshots using the "Take a screenshot" tool in the AVD
            showing your App. One (1) screenshot showing your internal web page and
@@ -53,10 +49,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Grattis du klickade på en knapp", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+
 
     }
 
