@@ -1,42 +1,26 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Forkade projektet från lenaSys
+Klonade till min laptop
+Bytte namn på appen `res/values/strings.xml` till c21sebarWebViewApp
+Gav appen nätverksåtkomst i AndroidManifest.xml med
+ ```
+    <uses-permission android:name="android.permission.INTERNET" />
+ ```
+Skapade ett webView och satte att använda ett ClientWebView för att inte använda och öppna länkar i ett separat webbläsare som lägger sig över/öppnar nytt
+Gav WebView ett id my_webView i content_main och instansierade under onCreate
+Satte igång att webView fönstret får använda JavaScript
+Skapade en html fil,
+Laddar in extern URL när extern knappen klickas på, www.his.se
+Laddar in en intern html fil när man klickar på intern knappen
 
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+```Java
+        myWebView = findViewById(R.id.my_webView);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.setWebViewClient(new WebViewClient());
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
-
-Läs gärna:
-
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+![](external.png)
+![](internal.png)

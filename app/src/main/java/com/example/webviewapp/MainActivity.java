@@ -36,15 +36,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        /*
-
-        -- Commit and push to your github fork
-        * Take two screenshots using the "Take a screenshot" tool in the AVD
-           showing your App. One (1) screenshot showing your internal web page and
-           one (1) screenshot showing your external web page.
-        */
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
