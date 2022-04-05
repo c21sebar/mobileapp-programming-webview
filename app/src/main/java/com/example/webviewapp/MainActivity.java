@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
-
+    WebView myWebView;
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
     }
@@ -25,15 +26,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        myWebView =findViewById(R.id.my_webView);
+        setContentView(myWebView);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         /*
-        * Rename your App. Tip: Values->Strings
-        * Enable Internet access for your App. Tip: Manifest
-        * Create a WebView element in the layout file content_main.xml
-        * Give the WebView element ID "my_webview"
+
+
+
         -- Commit and push to your github fork
         * Create a private member variable called "myWebView" of type WebView
         * Locate the WebView element created in step 1 using the ID created in step 2
